@@ -4,37 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="usuarios.css">
     <title>Panel de Administración</title>
-    <style>
-        body {
-            display: flex;
-        }
-        .sidebar {
-            min-width: 250px;
-            background-color: #f8f9fa;
-            height: 100vh;
-            position: fixed;
-            padding: 20px;
-        }
-        .content {
-            margin-left: 260px;
-            padding: 20px;
-            flex-grow: 1;
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar">
-        <h2>Admin Panel</h2>
+        <h5>Panel Administrativo</h5><br>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Clientes</a>
+                <a class="nav-link" href="admin.html">Clientes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="pedidos.html">Pedidos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link active" href="productos.html">Productos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Reportes</a>
@@ -43,7 +27,7 @@
     </div>
     
     <div class="content">
-        <h2>Lista de Productos</h2>
+        <h2>Lista de Productos</h2><br>
         <table class="table">
             <thead>
                 <tr>
@@ -54,22 +38,21 @@
                 </tr>
             </thead>
             <tbody id="productosTableBody">
-                <!-- Los datos de los productos se agregarán aquí mediante JavaScript -->
+               
             </tbody>
         </table>
     </div>
 
     <script>
-        // Función para cargar los datos de los productos desde el servlet
         async function cargarDetallesProductos() {
             try {
-                const response = await fetch('listarDetallesProductos'); // URL del servlet que listará los detalles de los productos en los pedidos
+                const response = await fetch('listarDetallesProductos'); 
                 if (!response.ok) {
                     throw new Error('Error al cargar los detalles de los productos');
                 }
                 const detalles = await response.json();
                 const tableBody = document.getElementById('productosTableBody');
-                tableBody.innerHTML = ''; // Limpiar la tabla antes de agregar los nuevos datos
+                tableBody.innerHTML = ''; 
 
                 detalles.forEach(detalle => {
                     const row = document.createElement('tr');
@@ -86,7 +69,6 @@
             }
         }
 
-        // Llamar a la función al cargar la página
         window.onload = cargarDetallesProductos;
     </script>
 </body>
