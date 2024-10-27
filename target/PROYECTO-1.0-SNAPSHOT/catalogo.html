@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Inicio del Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="index.html">
+                <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="catalogo.html" 
+                            >Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="login.html" 
+                            id="profileIcon">Login</a>
+                    </li>
+                    <!-- Carrito de Compras -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-4 ms-4" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-shopping-cart"></i> Carrito
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown"
+                            style="width: 500px;">
+                            <div id="emptyCartMessage" class="text-center text-muted">
+                                El carrito está vacío.
+                            </div>
+
+                            <div id="cartItems" class="mb-2" style="display: none;">
+                                <!-- La tabla de productos seleccionados -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cartTableBody">
+                                        <!-- Los productos se insertarán aquí dinámicamente -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <strong>Total:</strong>
+                                <strong id="cartTotal">$0.00</strong>
+                            </div>
+                            <div class="text-end mt-2">
+                                <button class="btn btn-primary btn-sm" onclick="window.location.href='pago.html'">Ir a pagar</button>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin del NAV -->
+
+    <!-- Sección de Hombres -->
+<section class="container mt-5 pt-5" id="hombres">
+    <h2 class="mb-4">Prendas para Hombres</h2>
+    <div id="carouselHombres" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo.png" class="card-img-top igen" alt="Camisa Hombre">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Casual</h5>
+                                <p class="card-text">$24.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo_negro.png" class="card-img-top igen" alt="Camisa Hombre">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Casual</h5>
+                                <p class="card-text">$24.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo4.jpg" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Elegante</h5>
+                                <p class="card-text">$29.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo5.jpg" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Manga Larga </h5>
+                                <p class="card-text">$29.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo7.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Tricolor</h5>
+                                <p class="card-text">$29.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo8.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Bicolor</h5>
+                                <p class="card-text">$70.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo9.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo de Algodon</h5>
+                                <p class="card-text">$29.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                        <div class="card">
+                            <img src="img/polo10.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Polo Estampado</h5>
+                                <p class="card-text">$29.99</p>
+                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Puedes agregar más elementos de carrusel aquí -->
+        </div>
+        <!-- Contenedor para las flechas fuera de las cartas -->
+        
+            <button class="carousel-control-prev" style="padding-bottom: 100px;" type="button" data-bs-target="#carouselHombres" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHombres" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+    </div>
+</section>
+
+
+    <!-- Sección de Mujeres-->
+    <section class="container mt-5 pt-5" id="mujeres">
+        <h2 class="mb-4">Prendas para Mujeres</h2>
+        <div id="carouselHombres" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo.png" class="card-img-top igen" alt="Camisa Hombre">
+                                <div class="card-body">
+                                    <h5 class="card-title">ITEM 1</h5>
+                                    <p class="card-text">$24.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo_negro.png" class="card-img-top igen" alt="Camisa Hombre">
+                                <div class="card-body">
+                                    <h5 class="card-title">ITEM 2</h5>
+                                    <p class="card-text">$24.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo4.jpg" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">ITem 3</h5>
+                                    <p class="card-text">$29.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo5.jpg" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">item 4 </h5>
+                                    <p class="card-text">$29.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo7.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">item 5</h5>
+                                    <p class="card-text">$29.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo8.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">item 6</h5>
+                                    <p class="card-text">$70.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo9.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">item 7</h5>
+                                    <p class="card-text">$29.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="card">
+                                <img src="img/polo10.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">item 8</h5>
+                                    <p class="card-text">$29.99</p>
+                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Puedes agregar más elementos de carrusel aquí -->
+            </div>
+            <!-- Contenedor para las flechas fuera de las cartas -->
+            
+                <button class="carousel-control-prev" style="padding-bottom: 100px;" type="button" data-bs-target="#carouselHombres" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHombres" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+        </div>
+    </section>
+
+
+    </section>
+
+    <footer class="container-fluid text-center text-md-start mt-5">
+        <div class="row p-5 bg-dark text-white">
+            <!-- Contenido del footer aquí -->
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

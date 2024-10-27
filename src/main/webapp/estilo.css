@@ -1,0 +1,183 @@
+body {
+    background-color: #f8f9fa;
+}
+
+nav{
+    background: linear-gradient(to right, #caf8ff, #fbc0c2);
+}
+
+.panel {
+    background-color: #f7e0e0;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-custom {
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-custom i {
+    margin-right: 10px;
+}
+.icon-consultas {
+    color: #e9edf2;
+    padding-right: 10px;
+}
+.icon-citas {
+    color: #ddeae0;
+    padding-right: 10px;
+}
+.icon-resumen {
+    color: #e3eced;
+    padding-right: 10px;
+}
+
+.carousel-caption {
+    background-color: #a45d5d80;
+    color: rgb(255, 255, 255);
+}
+
+.tarjet {
+    background-color: rgb(8, 8, 8);
+}
+
+.btn-ropa{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #930dae;
+    color: white;
+    border: none;
+    padding: 10px 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ropa:hover {
+    background-color: #0056b3;
+}
+
+.titulo{
+    font-size: 50px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    color: rgb(67, 67, 172);
+}
+
+.im{
+    width: 100%;
+    height: 400px; 
+    object-fit: cover; 
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+
+.dropdown-menu {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#cartItems img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.igen{
+    height: 300px;
+}
+
+
+.login-container {
+    margin-top: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+
+.login-box {
+    background-color: #fff; 
+    padding: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+}
+
+
+.login-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group input {
+    height: 50px; 
+    padding: 10px;
+    border-radius: 5px; 
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-bottom: 20px; 
+}
+
+.btn-login {
+    background-color: #007bff; 
+    color: #fff;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; 
+    color: #fff;
+}
+
+.logeo {
+    width: 400px; 
+    height: 500px;
+    padding: 20px; 
+}
+
+.logeo img {
+    width: 100px;
+    height: 400px; 
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        max-width: 1100px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .login-box {
+        padding: 20px;
+    }
+
+    .login-title {
+        font-size: 28px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+    }
+}

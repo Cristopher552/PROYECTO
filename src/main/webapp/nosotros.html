@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+     <!-- Inicio del Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="index.html">
+                <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="catalogo.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 ms-4" href="login.html"  id="profileIcon">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin del NAV -->
+
+    <br id="nosotros">
+    <div class="container">
+        <h2 class="text-center titulo">NOSOTROS</h2>
+        <div class="row featurette d-flex align-items-center">
+            <div class="col-md-7 order-md-2 d-flex flex-column justify-content-center">
+                <h2 class="featurette-heading fw-normal lh-1 text-center">Visión</h2>
+                <p class="lead text-justify">
+                    Ser una empresa líder y reconocida en la venta de ropa, lograr
+                    expandirnos en distintas zonas de la capital, proporcionando cada día
+                    más un servicio de excelencia a los clientes y competir en el mercado
+                    nacional.
+                </p>
+            </div>
+
+            <div class="row featurette d-flex align-items-center ">
+                <div class="col-md-7 d-flex flex-column justify-content-center ">
+                    <h2 class="featurette-heading fw-normal lh-1 text-center">Misión</h2>
+                    <p class="lead text-justify">
+                        Ofrecer a los clientes productos de calidad, a precios cómodos que
+                        cumplan con sus necesidades y exigencias, trabajamos para crear
+                        experiencias de compra memorables que reflejen la personalidad única
+                        de cada persona.
+                    </p>
+                </div>
+                <div class="col-md-5 ">
+                    <div id="missionImageCarousel" class="carousel slide" data-bs-ride="carousel"
+                        data-bs-interval="4000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto im imagenes"
+                                    src="img/mision1.png" aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                </img>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto im imagenes"
+                                    src="img/mision2.jpg" aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                </img>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="col-md-5 order-md-1">
+                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto im"
+                                src="img/vision.jpg" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                            </img>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto im"
+                                src="img/mision7.jpg" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                            </img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- Fin  de Mision y Vision -->
+    
+   <!-- Inicio del personal-->
+    <div class="container marketing espacio">
+        <h2 class="text-center titulo" id="personal">PERSONAL</h2>
+        <div class="row margenes">
+            <div class="col-lg-4 text-center custom-margin responsi">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="img/señora1.png" role="img"
+                    aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <h2 class="fw-normal">Sra. Mercedes</h2>
+                <p>Mas de 15 años administrando negocios y brindando las habilidades requeridas.</p>
+            </div>
+            <div class="col-lg-4 text-center custom-margin responsi">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="img/señorita1.png" role="img"
+                    aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <h2 class="fw-normal">Srta. Luciana</h2>
+                <p>Más de 5 años de experiencia brindando la atención apropiada a cada cliente.</p>
+            </div>
+            <div class="col-lg-4 text-center custom-margin responsi">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="img/señorita2.png" role="img"
+                    aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <h2 class="fw-normal">Srta. Fernanda</h2>
+                <p>Más de 4 años de experiencia atendiendo a clientes y adecuando vestimentas a su preferencia.</p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- Fin del personal -->
+
+
+    <footer class="container-fluid text-center text-md-start">
+        <div class="row p-5 bg-dark text-white">
+            <!-- Columna 1: SHONOS -->
+            <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                <p class="h5 mb-4">SHONOS</p>
+                <hr class="mb-4">
+                <p class="mb-2">Dirección</p>
+                <p class="mb-2">La Victoria 15018</p>
+                <p class="mb-2">Jirón Hipolito Unanue</p>
+            </div>
+
+            <!-- Columna 2: Links -->
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <p class="h5 mb-4 mt-md-0 mar">LINKS</p>
+                <hr class="mb-4">
+                <p class="mb-2">
+                    <a class="text-white" style="text-decoration:none;" href="index.html">Inicio</a>
+                </p>
+                <p class="mb-2">
+                    <a class="text-white" style="text-decoration:none;" href="nosotros.html">Nostros</a>
+                </p>
+                <p class="mb-2">
+                    <a class="text-white" style="text-decoration:none;" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">Productos</a>
+                </p>
+                <p class="mb-2">
+                    <a class="text-white" style="text-decoration:none;" href="#preguntas">Contactanos</a>
+                </p>
+            </div>
+
+            <!-- Columna 3: Horarios -->
+            <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                <p class="h5 mb-4 mt-5 mt-md-0">HORARIO</p>
+                <hr class="mb-4">
+                <p class="mb-2">Lunes a Domingo</p>
+                <p class="mb-2">8:00 am - 12:00 pm</p>
+                <p class="mb-2">13:00 pm - 8:00 pm</p>
+            </div>
+
+            <!-- Columna 4: Síguenos -->
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <p class="h5 mb-4 mt-5 mt-md-0">SÍGUENOS</p>
+                <hr class="mb-4">
+                <p class="mb-2">
+                    <a style="text-decoration:none;" href="" target="_blank" class="text-white">
+                        <i class="fab fa-tiktok"></i> Tik tok<br>
+                    </a>
+                </p>
+                <p class="mb-2">
+                    <a style="text-decoration:none;" href="" target="_blank" class="text-white">
+                        <i class="fab fa-instagram"></i> Instagram <br>
+                    </a>
+                </p>
+                <p class="mb-2">
+                    <a style="text-decoration:none;" href="" target="_blank" class="text-white">
+                        <i class="fas fa-envelope"></i> shonos12@gmail.com <br>
+                    </a>
+                </p>
+            </div>
+
+            <!-- Fila inferior -->
+            <div class="col-xs-12 pt-3">
+                <p class="text-center">Todos los derechos reservados - © 2024</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
