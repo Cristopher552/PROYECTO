@@ -1,293 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
 
-<body>
-    <!-- Inicio del Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-4" href="index.html">
-                <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 ms-4" href="catalogo.html" 
-                            >Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 ms-4" href="login.html" 
-                            id="profileIcon">Login</a>
-                    </li>
-                    <!-- Carrito de Compras -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link fs-4 ms-4" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="fas fa-shopping-cart"></i> Carrito
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown"
-                            style="width: 500px;">
-                            <div id="emptyCartMessage" class="text-center text-muted">
-                                El carrito está vacío.
-                            </div>
+    <body>
+        <!-- Inicio del Nav -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-4" href="index.html">
+                    <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="catalogo.html" 
+                               >Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="login.html" 
+                               id="profileIcon">Login</a>
+                        </li>
+                        <!-- Carrito de Compras -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fs-4 ms-4" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fas fa-shopping-cart"></i> Carrito
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown"
+                                style="width: 500px;">
+                                <div id="emptyCartMessage" class="text-center text-muted">
+                                    El carrito está vacío.
+                                </div>
 
-                            <div id="cartItems" class="mb-2" style="display: none;">
-                                <!-- La tabla de productos seleccionados -->
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Cantidad</th>
-                                            <th>Precio</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="cartTableBody">
-                                        <!-- Los productos se insertarán aquí dinámicamente -->
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <strong>Total:</strong>
-                                <strong id="cartTotal">S/0.00</strong>
-                            </div>
-                            <div class="text-end mt-2">
-                                <button class="btn btn-primary btn-sm" onclick="window.location.href='pago.html'">Ir a pagar</button>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Fin del NAV -->
-
-    <!-- Sección de Hombres -->
-<section class="container mt-5 pt-5" id="hombres">
-    <h2 class="mb-4">Prendas para Hombres</h2>
-    <div id="carouselHombres" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo.png" class="card-img-top igen" alt="Camisa Hombre">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo Casual</h5>
-                                <p class="card-text">$24.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo_negro.png" class="card-img-top igen" alt="Polo casual">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo casual</h5>
-                                <p class="card-text">$24.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo4.jpg" class="card-img-top igen" alt="Polo elegante">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo elegante</h5>
-                                <p class="card-text">$29.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo5.jpg" class="card-img-top igen" alt="Polo manga larga">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo manga larga </h5>
-                                <p class="card-text">$29.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
+                                <div id="cartItems" class="mb-2" style="display: none;">
+                                    <!-- La tabla de productos seleccionados -->
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Cantidad</th>
+                                                <th>Precio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="cartTableBody">
+                                            <!-- Los productos se insertarán aquí dinámicamente -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <strong>Total:</strong>
+                                    <strong id="cartTotal">S/0.00</strong>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <button class="btn btn-primary btn-sm" onclick="window.location.href = 'pago.html'">Ir a pagar</button>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo7.png" class="card-img-top igen" alt="Polo tricolor">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo tricolor</h5>
-                                <p class="card-text">$29.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+        </nav>
+        <!-- Fin del NAV -->
+
+        <!-- Sección de Hombres -->
+        <section class="container mt-5 pt-5" id="hombres">
+            <h2 class="mb-4">Prendas para Hombres</h2>
+            <div id="carouselHombres" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo.png" class="card-img-top igen" alt="Camisa Hombre">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo Casual</h5>
+                                        <p class="card-text">$24.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo_negro.png" class="card-img-top igen" alt="Polo casual">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo casual</h5>
+                                        <p class="card-text">$24.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo4.jpg" class="card-img-top igen" alt="Polo elegante">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo elegante</h5>
+                                        <p class="card-text">$29.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo5.jpg" class="card-img-top igen" alt="Polo manga larga">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo manga larga </h5>
+                                        <p class="card-text">$29.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo8.png" class="card-img-top igen" alt="Polo bicolor">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo bicolor</h5>
-                                <p class="card-text">$70.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo7.png" class="card-img-top igen" alt="Polo tricolor">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo tricolor</h5>
+                                        <p class="card-text">$29.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo8.png" class="card-img-top igen" alt="Polo bicolor">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo bicolor</h5>
+                                        <p class="card-text">$70.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo9.png" class="card-img-top igen" alt="Polo de Algodon">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo de algodon</h5>
+                                        <p class="card-text">$29.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/polo10.png" class="card-img-top igen" alt="Camisa Hombre 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo Estampado</h5>
+                                        <p class="card-text">$29.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo9.png" class="card-img-top igen" alt="Polo de Algodon">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo de algodon</h5>
-                                <p class="card-text">$29.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                        <div class="card">
-                            <img src="img/polo10.png" class="card-img-top igen" alt="Camisa Hombre 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Polo Estampado</h5>
-                                <p class="card-text">$29.99</p>
-                                <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Puedes agregar más elementos de carrusel aquí -->
                 </div>
+                <!-- Contenedor para las flechas fuera de las cartas -->
+
+                <button class="carousel-control-prev" style="padding-bottom: 100px;" type="button" data-bs-target="#carouselHombres" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHombres" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
-            <!-- Puedes agregar más elementos de carrusel aquí -->
-        </div>
-        <!-- Contenedor para las flechas fuera de las cartas -->
-        
-            <button class="carousel-control-prev" style="padding-bottom: 100px;" type="button" data-bs-target="#carouselHombres" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselHombres" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-    </div>
-</section>
+        </section>
 
 
-    <!-- Sección de Mujeres-->
-    <section class="container mt-5 pt-5" id="mujeres">
-        <h2 class="mb-4">Prendas para Mujeres</h2>
-        <div id="carouselMujeres" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im1.jpg" class="card-img-top igen" alt="Chaqueta larga">
-                                <div class="card-body">
-                                    <h5 class="card-title">Chaqueta larga</h5>
-                                    <p class="card-text"> S/130.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+        <!-- Sección de Mujeres-->
+        <section class="container mt-5 pt-5" id="mujeres">
+            <h2 class="mb-4">Prendas para Mujeres</h2>
+            <div id="carouselMujeres" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im1.jpg" class="card-img-top igen" alt="Chaqueta larga">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Chaqueta larga</h5>
+                                        <p class="card-text"> S/130.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im2.jpg" class="card-img-top igen" alt="Camiseta túnica">
-                                <div class="card-body">
-                                    <h5 class="card-title">Camiseta túnica</h5>
-                                    <p class="card-text">S/90.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im2.jpg" class="card-img-top igen" alt="Camiseta túnica">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Camiseta túnica</h5>
+                                        <p class="card-text">S/90.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im3.jpg" class="card-img-top igen" alt="Camisa franela">
-                                <div class="card-body">
-                                    <h5 class="card-title">Camisa franela</h5>
-                                    <p class="card-text">S/82.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im3.jpg" class="card-img-top igen" alt="Camisa franela">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Camisa franela</h5>
+                                        <p class="card-text">S/82.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im4.jpg" class="card-img-top igen" alt="Vestido camiseta">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vestido camiseta </h5>
-                                    <p class="card-text">$39.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im5.jpg" class="card-img-top igen" alt="Abrigo impermeable">
-                                <div class="card-body">
-                                    <h5 class="card-title">Abrigo impermeable</h5>
-                                    <p class="card-text">S/150.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im6.jpg" class="card-img-top igen" alt="Vestido coctel">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vestido cóctel</h5>
-                                    <p class="card-text">S/110.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im7.jpg" class="card-img-top igen" alt="Mini vestido">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mini vestido</h5>
-                                    <p class="card-text">S/85.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                            <div class="card">
-                                <img src="img/im8.jpg" class="card-img-top igen" alt="Vestido largo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vestido largo</h5>
-                                    <p class="card-text">S/95.99</p>
-                                    <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im4.jpg" class="card-img-top igen" alt="Vestido camiseta">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vestido camiseta </h5>
+                                        <p class="card-text">$39.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im5.jpg" class="card-img-top igen" alt="Abrigo impermeable">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Abrigo impermeable</h5>
+                                        <p class="card-text">S/150.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im6.jpg" class="card-img-top igen" alt="Vestido coctel">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vestido cóctel</h5>
+                                        <p class="card-text">S/110.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im7.jpg" class="card-img-top igen" alt="Mini vestido">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mini vestido</h5>
+                                        <p class="card-text">S/85.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                                <div class="card">
+                                    <img src="img/im8.jpg" class="card-img-top igen" alt="Vestido largo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vestido largo</h5>
+                                        <p class="card-text">S/95.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Puedes agregar más elementos de carrusel aquí -->
                 </div>
-                <!-- Puedes agregar más elementos de carrusel aquí -->
-            </div>
-            <!-- Contenedor para las flechas fuera de las cartas -->
-            
+                <!-- Contenedor para las flechas fuera de las cartas -->
+
                 <button class="carousel-control-prev" style="padding-bottom: 100px;" type="button" data-bs-target="#carouselMujeres" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
@@ -296,22 +296,80 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <footer class="container-fluid text-center text-md-start">
+            <div class="row p-5 bg-dark text-white">
+                <!-- Columna 1: SHONOS -->
+                <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                    <p class="h5 mb-4">SHONOS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">Dirección</p>
+                    <p class="mb-2">La Victoria 15018</p>
+                    <p class="mb-2">Jirón Hipolito Unanue</p>
+                </div>
+
+                <!-- Columna 2: Links -->
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <p class="h5 mb-4 mt-md-0 mar">LINKS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="index.html">Inicio</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="nosotros.html">Nostros</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="catalogo.html">Catálogo</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="login.html">Login</a>
+                    </p>
+                </div>
+
+                <!-- Columna 3: Horarios -->
+                <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                    <p class="h5 mb-4 mt-5 mt-md-0">HORARIO</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">Lunes a Domingo</p>
+                    <p class="mb-2">8:00 am - 12:00 pm</p>
+                    <p class="mb-2">13:00 pm - 8:00 pm</p>
+                </div>
+
+                <!-- Columna 4: Síguenos -->
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <p class="h5 mb-4 mt-5 mt-md-0">SÍGUENOS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="https://www.tiktok.com/@kleer.pe?_t=8a5ukYTGaes&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaZsrKfwdR-rzLimS9kKCT42--PzcE3adfuSsmlw-GkbHhi2qDRAwgirL_U_aem_LqIq-SdJ1yv6BdKZjObsWQ" target="_blank" class="text-white">
+                            <i class="fab fa-tiktok"></i> Tik tok<br>
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="https://www.instagram.com/shonos_indumentaria/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram"></i> Instagram <br>
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="#" target="_blank" onclick="return false;" class="text-white">
+                            <i class="fas fa-envelope"></i> shonos12@gmail.com <br>
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Fila inferior -->
+                <div class="col-xs-12 pt-3">
+                    <p class="text-center">Todos los derechos reservados - © 2024</p>
+                </div>
+            </div>
+        </footer>
 
 
-    </section>
-
-    <footer class="container-fluid text-center text-md-start mt-5">
-        <div class="row p-5 bg-dark text-white">
-            <!-- Contenido del footer aquí -->
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 
 </html>

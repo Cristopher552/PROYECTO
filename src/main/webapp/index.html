@@ -1,193 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Inicio del Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand ms-4" href="index.html">
-            <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4 ms-4" href="catalogo.html" data-bs-toggle="modal" data-bs-target="#ContactanosModal">Catálogo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4 ms-4" href="login.html"  id="profileIcon">Login</a>
-              </li>
-            </ul>
-          </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Inicio del Nav -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-4" href="index.html">
+                    <img src="img/logoTienda-rem.png" alt="logo" width="150px" height="45px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active fs-4 ms-4" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="catalogo.html">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 ms-4" href="login.html" id="profileIcon">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Fin del NAV -->
+
+        <!-- Inicio del carrusel -->
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" height="700px" src="img/portada1.png" aria-hidden="true" focusable="false"></img>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h2>Transforma tu vestuario, trasforma tu vida. </h2><br>
+                            <p><a class="btn btn-lg btn-primary" href="nosotros.html">Nosotros</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" height="700px" src="img/portada1.jpg" aria-hidden="true" focusable="false"></img>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h2>Estilo es usar lo que te hace sentir bien</h2><br>
+                            <p><a class="btn btn-lg btn-primary" href="#servicios">Productos</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" height="700px" src="img/portada_3.jpg" aria-hidden="true"
+                         focusable="false"></img>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h2>Comunicate con nosotros para tus consultas.</h2><br>
+                            <p><a class="btn btn-lg btn-primary" href="#personal">Contactanos</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-      </nav>
-      <!-- Fin del NAV -->
-      
-      <!-- Inicio del carrusel -->
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" height="700px" src="img/portada1.png" aria-hidden="true" focusable="false"></img>
-        <div class="container">
-          <div class="carousel-caption">
-              <h2>Transforma tu vestuario, trasforma tu vida. </h2><br>
-              <p><a class="btn btn-lg btn-primary" href="nosotros.html">Nosotros</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" height="700px" src="img/portada1.jpg" aria-hidden="true" focusable="false"></img>
-        <div class="container">
-          <div class="carousel-caption">
-            <h2>Estilo es usar lo que te hace sentir bien</h2><br>
-            <p><a class="btn btn-lg btn-primary" href="#servicios">Productos</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" height="700px" src="img/portada_3.jpg" aria-hidden="true"
-          focusable="false"></img>
-        <div class="container">
-          <div class="carousel-caption">
-            <h2>Comunicate con nosotros para tus consultas.</h2><br>
-            <p><a class="btn btn-lg btn-primary" href="#personal">Contactanos</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <!-- Fin del carusel. -->
+        <!-- Fin del carusel. -->
 
-  <br id="servicios"><br><br>
-<div class="container espac">
-  <h2 class="text-center titu">VESTIMENTAS</h2>
-  <hr>
-  <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-    <!-- Tarjeta 1 -->
-    <div class="col" style="max-width: 500px;">
-      <div class="card tarjet">
-        <img src="img/modeloh.png" class="card-img-top" alt="Ortodoncia">
-        <button  href="catalogo.html" class="btn-ropa">HOMBRES</button>
-      </div>
-    </div>
-    <!-- Tarjeta 2 -->
-    <div class="col" style="max-width: 500px;">
-      <div class="card tarjet">
-        <img src="img/modelom.png" class="card-img-top" alt="Implantes">
-        <button  href="catalogo.html"   class="btn-ropa">MUJERES</button>
-      </div>
-    </div>
-  </div>
-</div><br><br>
-
-  
-
-<footer class="container-fluid text-center text-md-start">
-  <div class="row p-5 bg-dark text-white">
-    <!-- Columna 1: ONG SONRISAS -->
-    <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
-      <p class="h5 mb-4">SHONOS</p>
-      <hr class="mb-4">
-      <p class="mb-2">Dirección</p>
-      <p class="mb-2">La Victoria 15018</p>
-      <p class="mb-2">Jirón Hipolito Unanue</p>
-    </div>
-
-    <!-- Columna 2: Links -->
-    <div class="col-xs-12 col-md-6 col-lg-3">
-      <p class="h5 mb-4 mt-md-0 mar">LINKS</p>
-      <hr class="mb-4">
-      <p class="mb-2">
-        <a class="text-white" style="text-decoration:none;" href="index.html">Inicio</a>
-      </p>
-      <p class="mb-2">
-        <a class="text-white" style="text-decoration:none;" href="nosotros.html">Nostros</a>
-      </p>
-      <p class="mb-2">
-        <a class="text-white" style="text-decoration:none;" data-bs-toggle="modal"
-          data-bs-target="#registerModal">Productos</a>
-      </p>
-      <p class="mb-2">
-        <a class="text-white" style="text-decoration:none;" href="#preguntas">Contactanos</a>
-      </p>
-    </div>
-
-    <!-- Columna 3: Horarios -->
-    <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
-      <p class="h5 mb-4 mt-5 mt-md-0">HORARIO</p>
-      <hr class="mb-4">
-      <p class="mb-2">Lunes a Domingo</p>
-      <p class="mb-2">8:00 am - 12:00 pm</p>
-      <p class="mb-2">13:00 pm - 8:00 pm</p>
-    </div>
-
-    <!-- Columna 4: Síguenos -->
-    <div class="col-xs-12 col-md-6 col-lg-3">
-      <p class="h5 mb-4 mt-5 mt-md-0">SÍGUENOS</p>
-      <hr class="mb-4">
-      <p class="mb-2">
-        <a style="text-decoration:none;" href="" target="_blank"
-          class="text-white">
-          <i class="fab fa-tiktok"></i> Tik tok<br>
-        </a>
-      </p>
-      <p class="mb-2">
-        <a style="text-decoration:none;" href="" target="_blank"
-          class="text-white">
-          <i class="fab fa-instagram"></i> Instagram <br>
-        </a>
-      </p>
-      <p class="mb-2">
-        <a style="text-decoration:none;" href="" target="_blank"
-          class="text-white">
-          <i class="fas fa-envelope"></i> shonos12@gmail.com <br>
-        </a>
-      </p>
-    </div>
-
-    <!-- Fila inferior -->
-    <div class="col-xs-12 pt-3">
-      <p class="text-center">Todos los derechos reservados - © 2024</p>
-    </div>
-  </div>
-</footer>
+        <br id="servicios"><br><br>
+        <div class="container espac">
+            <h2 class="text-center titu">VESTIMENTAS</h2>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+                <!-- Tarjeta 1 -->
+                <div class="col" style="max-width: 500px;">
+                    <div class="card tarjet">
+                        <img src="img/modeloh.png" class="card-img-top" alt="Ortodoncia">
+                        <button  onclick="window.location.href = 'catalogo.html#hombres'"  class="btn-ropa">HOMBRES</button>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="col" style="max-width: 500px;">
+                    <div class="card tarjet">
+                        <img src="img/modelom.png" class="card-img-top" alt="Implantes">
+                        <button  onclick="window.location.href = 'catalogo.html#mujeres'"    class="btn-ropa">MUJERES</button>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
 
 
-      
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-</body>
+
+        <footer class="container-fluid text-center text-md-start">
+            <div class="row p-5 bg-dark text-white">
+                <!-- Columna 1: SHONOS -->
+                <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                    <p class="h5 mb-4">SHONOS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">Dirección</p>
+                    <p class="mb-2">La Victoria 15018</p>
+                    <p class="mb-2">Jirón Hipolito Unanue</p>
+                </div>
+
+                <!-- Columna 2: Links -->
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <p class="h5 mb-4 mt-md-0 mar">LINKS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="index.html">Inicio</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="nosotros.html">Nostros</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="catalogo.html">Catálogo</a>
+                    </p>
+                    <p class="mb-2">
+                        <a class="text-white" style="text-decoration:none;" href="login.html">Login</a>
+                    </p>
+                </div>
+
+                <!-- Columna 3: Horarios -->
+                <div class="col-xs-12 col-md-6 d-none d-lg-block col-lg-3">
+                    <p class="h5 mb-4 mt-5 mt-md-0">HORARIO</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">Lunes a Domingo</p>
+                    <p class="mb-2">8:00 am - 12:00 pm</p>
+                    <p class="mb-2">13:00 pm - 8:00 pm</p>
+                </div>
+
+                <!-- Columna 4: Síguenos -->
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <p class="h5 mb-4 mt-5 mt-md-0">SÍGUENOS</p>
+                    <hr class="mb-4">
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="https://www.tiktok.com/@kleer.pe?_t=8a5ukYTGaes&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaZsrKfwdR-rzLimS9kKCT42--PzcE3adfuSsmlw-GkbHhi2qDRAwgirL_U_aem_LqIq-SdJ1yv6BdKZjObsWQ" target="_blank" class="text-white">
+                            <i class="fab fa-tiktok"></i> Tik tok<br>
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="https://www.instagram.com/shonos_indumentaria/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram"></i> Instagram <br>
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a style="text-decoration:none;" href="#" target="_blank" onclick="return false;" class="text-white">
+                            <i class="fas fa-envelope"></i> shonos12@gmail.com <br>
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Fila inferior -->
+                <div class="col-xs-12 pt-3">
+                    <p class="text-center">Todos los derechos reservados - © 2024</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    </body>
 </html>
