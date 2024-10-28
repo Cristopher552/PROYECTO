@@ -11,10 +11,10 @@ import com.google.gson.Gson;
 @WebServlet("/listarDetallesProductos")
 public class ListarProductosServlet extends HttpServlet {
 
-    private DetallePedidoRepositorio detallePedidoRepositorio;
+    private DetallePedidoRepositorioDAO detallePedidoRepositorio;
 
     public ListarProductosServlet() {
-        this.detallePedidoRepositorio = new DetallePedidoRepositorioMYSQL(); // Opción simple de inyección manual
+        this.detallePedidoRepositorio = new DetallePedidoRepositorioImplem(); // Opción simple de inyección manual
     }
 
     @Override

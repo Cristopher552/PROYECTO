@@ -12,7 +12,6 @@ public class conexionPool {
         dataSource.setUsername("root");
         dataSource.setPassword(""); 
 
-        // Configuración del pool
         dataSource.setInitialSize(5);
         dataSource.setMaxTotal(10);
         dataSource.setMaxIdle(5);

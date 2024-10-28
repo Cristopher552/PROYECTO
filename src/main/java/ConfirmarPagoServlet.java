@@ -19,7 +19,7 @@ public class ConfirmarPagoServlet extends HttpServlet {
         try {
             // Obtener conexión
             connection = conexionBD.getConnection();
-            connection.setAutoCommit(false); // Iniciar transacción
+            connection.setAutoCommit(false); 
 
             // Obtener datos del formulario
             String nombre = request.getParameter("nombre");
@@ -45,7 +45,7 @@ public class ConfirmarPagoServlet extends HttpServlet {
                 // Obtener el ID del cliente insertado
                 try (ResultSet generatedKeys = stmtCliente.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        int clienteId = generatedKeys.getInt(1); // ID del cliente insertado
+                        int clienteId = generatedKeys.getInt(1); 
 
                         // Insertar datos del pedido
                         String insertPedidoSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago) VALUES (?, ?, ?)";
@@ -55,21 +55,16 @@ public class ConfirmarPagoServlet extends HttpServlet {
                             stmtPedido.setString(3, metodoPago);
                             stmtPedido.executeUpdate();
 
-                            // Obtener el ID del pedido insertado
                             try (ResultSet generatedKeysPedido = stmtPedido.getGeneratedKeys()) {
                                 if (generatedKeysPedido.next()) {
-                                    int pedidoId = generatedKeysPedido.getInt(1); // ID del pedido insertado
-
-                                    // Obtener los datos de los productos del carrito usando Gson y Guava
+                                    int pedidoId = generatedKeysPedido.getInt(1); 
+                                    
                                     Gson gson = new Gson();
                                     String[] nombresProductosArray = gson.fromJson(request.getParameter("nombresProductos"), String[].class);
                                     int[] cantidades = gson.fromJson(request.getParameter("cantidades"), int[].class);
                                     String[] preciosArray = gson.fromJson(request.getParameter("precios"), String[].class);
 
-                                    // Usar ImmutableList para crear una lista inmutable de nombres de productos
                                     ImmutableList<String> nombresProductos = ImmutableList.copyOf(nombresProductosArray);
-
-                                    // Insertar datos de detalle del pedido
                                     String insertDetalleSQL = "INSERT INTO detalle_pedido (pedido_id, nombre_producto, cantidad, precio) VALUES (?, ?, ?, ?)";
                                     try (PreparedStatement stmtDetalle = connection.prepareStatement(insertDetalleSQL)) {
                                         for (int i = 0; i < nombresProductos.size(); i++) {
@@ -77,9 +72,9 @@ public class ConfirmarPagoServlet extends HttpServlet {
                                             stmtDetalle.setString(2, nombresProductos.get(i));
                                             stmtDetalle.setInt(3, cantidades[i]);
                                             stmtDetalle.setString(4, preciosArray[i]);
-                                            stmtDetalle.addBatch(); // Agregar al batch
+                                            stmtDetalle.addBatch(); 
                                         }
-                                        stmtDetalle.executeBatch(); // Ejecutar batch de inserciones
+                                        stmtDetalle.executeBatch(); 
                                     }
                                 }
                             }
