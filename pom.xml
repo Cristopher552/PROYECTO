@@ -70,6 +70,27 @@
             <version>1.4.11</version>
         </dependency>
         
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.11.3</version> 
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.11.3</version> 
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.11.3</version> 
+            <scope>test</scope>
+        </dependency>
+        
     </dependencies>
     
     
@@ -120,6 +141,15 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- O usa la versión estable más reciente -->
+                <configuration>
+                    <useModulePath>false</useModulePath> <!-- Esto es importante si usas Java 9 o posterior -->
+                    <!-- Aquí no debe haber configuraciones incorrectas -->
+                </configuration>
             </plugin>
         </plugins>
     </build>

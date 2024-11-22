@@ -13,7 +13,7 @@ public class conexionPool {
         // Configuración del pool de conexiones
         dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/shonestienda");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/test-prueba");
         dataSource.setUsername("root");
         dataSource.setPassword(""); 
 
@@ -24,12 +24,6 @@ public class conexionPool {
         dataSource.setMinIdle(2); // Número mínimo de conexiones inactivas en el pool
     }
 
-    /**
-     * Obtiene una conexión del pool de conexiones.
-     *
-     * @return una instancia de {@link Connection} para interactuar con la base de datos.
-     * @throws SQLException si ocurre un error al obtener la conexión del pool.
-     */
     public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();
     }
