@@ -13,15 +13,14 @@ public class conexionPool {
         // Configuración del pool de conexiones
         dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test-prueba");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/prueba2");
         dataSource.setUsername("root");
         dataSource.setPassword(""); 
 
-        // Configuración del tamaño del pool
-        dataSource.setInitialSize(5); // Número inicial de conexiones en el pool
-        dataSource.setMaxTotal(10); // Número máximo de conexiones en el pool
-        dataSource.setMaxIdle(5); // Número máximo de conexiones inactivas en el pool
-        dataSource.setMinIdle(2); // Número mínimo de conexiones inactivas en el pool
+        dataSource.setInitialSize(5); 
+        dataSource.setMaxTotal(10); 
+        dataSource.setMaxIdle(5); 
+        dataSource.setMinIdle(2); 
     }
 
     public static Connection getConnection() throws SQLException {

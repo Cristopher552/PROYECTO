@@ -21,55 +21,81 @@
                 <a class="nav-link active" href="productos.html">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Reportes</a>
+                <a class="nav-link" href="reportes.html">Reportes</a>
             </li>
         </ul>
     </div>
     
     <div class="content">
-        <h2>Lista de Productos</h2><br>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID Pedido</th>
-                    <th>Nombre del Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody id="productosTableBody">
-               
-            </tbody>
-        </table>
+    <h2>Lista de Productos</h2><br>
+    <div class="mb-3">
+        <label for="filtroPedido" class="form-label">Filtrar por ID de Pedido:</label>
+        <input type="number" id="filtroPedido" class="form-control" placeholder="Ingrese el ID de pedido">
+        <button id="filtrarBtn" class="btn btn-primary mt-2">Filtrar</button>
+        <button id="resetearBtn" class="btn btn-secondary mt-2">Resetear</button>
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Pedido</th>
+                <th>Nombre del Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="productosTableBody">
+        </tbody>
+    </table>
+</div>
+
 
     <script>
         async function cargarDetallesProductos() {
-            try {
-                const response = await fetch('listarDetallesProductos'); 
-                if (!response.ok) {
-                    throw new Error('Error al cargar los detalles de los productos');
-                }
-                const detalles = await response.json();
-                const tableBody = document.getElementById('productosTableBody');
-                tableBody.innerHTML = ''; 
-
-                detalles.forEach(detalle => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${detalle.pedidoId}</td>
-                        <td>${detalle.nombreProducto}</td>
-                        <td>${detalle.cantidad}</td>
-                        <td>$${detalle.precio}</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } catch (error) {
-                console.error('Error:', error);
-            }
+    try {
+        const response = await fetch('listarDetallesProductos'); 
+        if (!response.ok) {
+            throw new Error('Error al cargar los detalles de los productos');
         }
+        const detalles = await response.json();
+        mostrarDetalles(detalles); // Muestra todos los detalles inicialmente
 
-        window.onload = cargarDetallesProductos;
+        // Evento para filtrar
+        document.getElementById('filtrarBtn').addEventListener('click', () => {
+            const filtroPedido = document.getElementById('filtroPedido').value.trim();
+            if (filtroPedido) {
+                const detallesFiltrados = detalles.filter(detalle => detalle.pedido_id == filtroPedido);
+                mostrarDetalles(detallesFiltrados);
+            }
+        });
+
+        // Evento para resetear el filtro
+        document.getElementById('resetearBtn').addEventListener('click', () => {
+            document.getElementById('filtroPedido').value = '';
+            mostrarDetalles(detalles); // Muestra todos los detalles de nuevo
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function mostrarDetalles(detalles) {
+    const tableBody = document.getElementById('productosTableBody');
+    tableBody.innerHTML = ''; 
+
+    detalles.forEach(detalle => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${detalle.pedido_id}</td>
+            <td>${detalle.nombreProducto}</td>
+            <td>${detalle.cantidad}</td>
+            <td>$${detalle.precio}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+window.onload = cargarDetallesProductos;
+
     </script>
 </body>
 </html>

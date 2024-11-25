@@ -9,14 +9,9 @@ import java.util.List;
  * Implementación de la interfaz {@link PedidoRepositorioDAO} para acceder a los pedidos.
  * Esta clase se encarga de las operaciones de recuperación de datos relacionados con los pedidos desde la base de datos.
  */
+
 public class PedidoRepositorioImplem implements PedidoRepositorioDAO {
 
-    /**
-     * Obtiene una lista de todos los pedidos en el sistema.
-     *
-     * @return una lista de objetos {@link Pedido} que representan todos los pedidos.
-     * @throws SQLException si ocurre un error al acceder a la base de datos.
-     */
     @Override
     public List<Pedido> getAllPedidos() throws SQLException {
         List<Pedido> pedidos = new ArrayList<>();
@@ -24,17 +19,18 @@ public class PedidoRepositorioImplem implements PedidoRepositorioDAO {
 
         try {
             connection = conexionBD.getConnection();
-            String sql = "SELECT id, cliente_id, total, metodo_pago, fecha FROM pedidos";
+            String sql = "SELECT pedido_id, cliente_id, total, metodo_pago, estado, fecha_pedido FROM pedidos";
             try (PreparedStatement stmt = connection.prepareStatement(sql);
                  ResultSet rs = stmt.executeQuery()) {
 
                 while (rs.next()) {
                     Pedido pedido = new Pedido();
-                    pedido.setId(rs.getInt("id"));
-                    pedido.setClienteId(rs.getInt("cliente_id"));
-                    pedido.setTotal(rs.getString("total"));
+                    pedido.setPedido_id(rs.getInt("pedido_id"));  // Se usa 'pedido_id' en lugar de 'id'
+                    pedido.setCliente_id(rs.getInt("cliente_id"));  // Se usa 'cliente_id' en lugar de 'clienteId'
+                    pedido.setTotal(rs.getBigDecimal("total"));
                     pedido.setMetodoPago(rs.getString("metodo_pago"));
-                    pedido.setFecha(rs.getDate("fecha"));
+                    pedido.setEstado(rs.getString("estado"));
+                    pedido.setFecha(rs.getDate("fecha_pedido"));
                     pedidos.add(pedido);
                 }
             }
@@ -46,3 +42,4 @@ public class PedidoRepositorioImplem implements PedidoRepositorioDAO {
         return pedidos;
     }
 }
+

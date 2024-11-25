@@ -6,13 +6,7 @@ import java.util.List;
  * Proporciona métodos para recuperar información sobre los pedidos.
  */
 public interface PedidoRepositorioDAO {
-    
-    /**
-     * Obtiene una lista de todos los pedidos en el sistema.
-     *
-     * @return una lista de objetos {@link Pedido} que representan todos los pedidos.
-     * @throws SQLException si ocurre un error al acceder a la base de datos.
-     */
+
     List<Pedido> getAllPedidos() throws SQLException;
 }
 

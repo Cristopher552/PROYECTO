@@ -16,23 +16,12 @@ import com.google.gson.Gson;
 public class ListarProductosServlet extends HttpServlet {
 
     private DetallePedidoRepositorioDAO detallePedidoRepositorio;
-
-    /**
-     * Constructor del servlet que inicializa el repositorio de detalles de pedidos.
-     * Se utiliza una implementación de DetallePedidoRepositorioDAO.
-     */
+    
     public ListarProductosServlet() {
-        this.detallePedidoRepositorio = new DetallePedidoRepositorioImplem(); // Opción simple de inyección manual
+        this.detallePedidoRepositorio = new DetallePedidoRepositorioImplem(); 
     }
 
-    /**
-     * Maneja las solicitudes GET para obtener la lista de detalles de productos.
-     *
-     * @param request la solicitud HTTP recibida.
-     * @param response la respuesta HTTP que se enviará al cliente.
-     * @throws ServletException si ocurre un error durante la ejecución del servlet.
-     * @throws IOException si ocurre un error de entrada/salida al procesar la respuesta.
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

@@ -8,9 +8,11 @@ PedidoRepositorioDAO.class
 Cliente.class
 conexionBD.class
 DetallePedido.class
+EliminarClienteServlet.class
 conexionPool.class
 DetallePedidoRepositorioImplem.class
 ListarClienteServlet.class
+ActualizarEstadoPedidoServlet.class
 usuarioDAOimplem.class
 ClienteRepositorioImplem.class
 loginServlet.class

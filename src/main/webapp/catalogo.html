@@ -89,43 +89,167 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="col-md-3 d-none d-md-block"> 
                                 <div class="card">
                                     <img src="img/polo.png" class="card-img-top igen" alt="Camisa Hombre">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Polo Casual</h5>
-                                        <p class="card-text">$24.99</p>
-                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                                <div class="card">
-                                    <img src="img/polo_negro.png" class="card-img-top igen" alt="Polo casual">
                                     <div class="card-body">
                                         <h5 class="card-title">Polo casual</h5>
                                         <p class="card-text">$24.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal1" onclick="cargarDetalles('Polo casual', 'Preta', 'Este es un polo casual de alta calidad, color crema con estampado del logo e ideal para cualquier ocasión.', 'Algodón y fibra.', 24.99, 'img/polo.png')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal1" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+
+                                                <div class="col-md-6 text-center">
+                                                    <img src="" id="productoImagenSrc" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre">Nombre del Producto</h5>
+                                                    <p id="productoMarca"><strong>Marca:</strong> Sydney</p>
+                                                    <p id="productoDescripcion"><strong>Descripción:</strong></p>
+                                                    <p id="productoMaterial"><strong>Material:</strong> Algodón y fibra.</p>
+                                                    <p id="productoPrecio"><strong>Precio:</strong> $24.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block"> 
+                                <div class="card">
+                                    <img src="img/polo_negro.png" class="card-img-top igen" alt="Polo casual">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Polo de algodon</h5>
+                                        <p class="card-text">$24.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal2" onclick="cargarDetalles('Polo de algodón', 'Sydney', 'Este es un polo casual de alta calidad, ideal para cualquier ocasión.', 'Algodón 100%', 24.99, 'img/polo_negro.png')">Ver detalles</button>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="modal fade" id="productoModal2" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <!-- Columna para la imagen -->
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo_negro.png" id="productoImagenSrc" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+
+                                                <!-- Columna para la información -->
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre">Polo de algodón</h5>
+                                                    <p id="productoMarca"><strong>Marca:</strong> Sydney</p>
+                                                    <p id="productoDescripcion"><strong>Descripción:</strong>Este es un polo de algodón de alta calidad, color negro e ideal para fiestas.</p>
+                                                    <p id="productoMaterial"><strong>Material:</strong> Algodón 100%.</p>
+                                                    <p id="productoPrecio"><strong>Precio:</strong> $24.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 d-none d-md-block"> 
                                 <div class="card">
                                     <img src="img/polo4.jpg" class="card-img-top igen" alt="Polo elegante">
                                     <div class="card-body">
                                         <h5 class="card-title">Polo elegante</h5>
                                         <p class="card-text">$29.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal3" onclick="cargarDetalles('Polo elegante', 'Preta', 'Este es un polo de alta elegancia, color celeste claro con encajes finos e ideal para reuniones formales.', 'Fibra 100%.', 24.99, 'img/polo4.png')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal3" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <!-- Columna para la imagen -->
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo4.jpg" id="productoImagenSrc" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+
+                                                <!-- Columna para la información -->
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre">Polo elegante</h5>
+                                                    <p id="productoMarca"><strong>Marca:</strong> Sydney</p>
+                                                    <p id="productoDescripcion"><strong>Descripción:</strong>Este es un polo de alta elegancia, color celeste claro con encajes finos e ideal para reuniones formales.</p>
+                                                    <p id="productoMaterial"><strong>Material:</strong> Algodón y fibra.</p>
+                                                    <p id="productoPrecio"><strong>Precio:</strong> $29.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/polo5.jpg" class="card-img-top igen" alt="Polo manga larga">
                                     <div class="card-body">
                                         <h5 class="card-title">Polo manga larga </h5>
-                                        <p class="card-text">$29.99</p>
+                                        <p class="card-text">$32.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal14" onclick="cargarDetalles('Polo manga larga', 'Preta', 'Compuesto de encajes y bordados de alte calidad e ideal para ocasiones formales o fiestas.', 'Algodón y fibra.', 32.99, 'img/polo5.jpg')">Ver detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal4" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <!-- Columna para la imagen -->
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo5.jpg" id="productoImagenSrc" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+
+                                                <!-- Columna para la información -->
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre">Nombre del Producto</h5>
+                                                    <p id="productoMarca"><strong>Marca:</strong> Sydney</p>
+                                                    <p id="productoDescripcion"><strong>Descripción:</strong>Este es un polo de algodón de alta calidad, color negro e ideal para fiestas.</p>
+                                                    <p id="productoMaterial"><strong>Material:</strong> Algodón 100%.</p>
+                                                    <p id="productoPrecio"><strong>Precio:</strong> $24.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -133,13 +257,42 @@
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="col-md-3 d-none d-md-block"> 
                                 <div class="card">
                                     <img src="img/polo7.png" class="card-img-top igen" alt="Polo tricolor">
                                     <div class="card-body">
                                         <h5 class="card-title">Polo tricolor</h5>
                                         <p class="card-text">$29.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal5" onclick="cargarDetalles('Polo manga larga', 'Preta', 'Compuesto de encajes y bordados de alte calidad e ideal para ocasiones formales o fiestas.', 'Algodón y fibra.', 32.99, 'img/polo5.jpg')">Ver detalles</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal5" tabindex="-1" aria-labelledby="productoModalLabel1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel1">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo7.png" id="productoImagenSrc1" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre1">Polo Tricolor</h5>
+                                                    <p id="productoMarca1"><strong>Marca:</strong> Ansus</p>
+                                                    <p id="productoDescripcion1"><strong>Descripción:</strong> Polo casual con diseño tricolor en tonos vibrantes. Ideal para salidas informales.</p>
+                                                    <p id="productoMaterial1"><strong>Material:</strong> 100% Algodón peinado.</p>
+                                                    <p id="productoPrecio1"><strong>Precio:</strong> $29.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +303,35 @@
                                         <h5 class="card-title">Polo bicolor</h5>
                                         <p class="card-text">$70.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal6" onclick="cargarDetalles('Polo manga larga', 'Preta', 'Compuesto de encajes y bordados de alte calidad e ideal para ocasiones formales o fiestas.', 'Algodón y fibra.', 32.99, 'img/polo5.jpg')">Ver detalles</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal6" tabindex="-1" aria-labelledby="productoModalLabel2" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel2">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo8.png" id="productoImagenSrc2" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre2">Polo Bicolor</h5>
+                                                    <p id="productoMarca2"><strong>Marca:</strong> StyleMasters</p>
+                                                    <p id="productoDescripcion2"><strong>Descripción:</strong> Polo elegante con diseño bicolor, perfecto para un look casual y profesional.</p>
+                                                    <p id="productoMaterial2"><strong>Material:</strong> Algodón y poliéster.</p>
+                                                    <p id="productoPrecio2"><strong>Precio:</strong> $70.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +342,35 @@
                                         <h5 class="card-title">Polo de algodon</h5>
                                         <p class="card-text">$29.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal7" onclick="cargarDetalles('Polo manga larga', 'Preta', 'Compuesto de encajes y bordados de alte calidad e ideal para ocasiones formales o fiestas.', 'Algodón y fibra.', 32.99, 'img/polo5.jpg')">Ver detalles</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal7" tabindex="-1" aria-labelledby="productoModalLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel3">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo9.png" id="productoImagenSrc3" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre3">Polo de Algodón</h5>
+                                                    <p id="productoMarca3"><strong>Marca:</strong> EcoWear</p>
+                                                    <p id="productoDescripcion3"><strong>Descripción:</strong> Polo fabricado en algodón orgánico, ideal para un estilo cómodo y ecológico.</p>
+                                                    <p id="productoMaterial3"><strong>Material:</strong> Algodón 100% ecológico.</p>
+                                                    <p id="productoPrecio3"><strong>Precio:</strong> $29.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -170,12 +381,40 @@
                                         <h5 class="card-title">Polo Estampado</h5>
                                         <p class="card-text">$29.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal8" onclick="cargarDetalles('Polo manga larga', 'Preta', 'Compuesto de encajes y bordados de alte calidad e ideal para ocasiones formales o fiestas.', 'Algodón y fibra.', 32.99, 'img/polo5.jpg')">Ver detalles</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal8" tabindex="-1" aria-labelledby="productoModalLabel4" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel4">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/polo10.png" id="productoImagenSrc4" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre4">Polo Estampado</h5>
+                                                    <p id="productoMarca4"><strong>Marca:</strong> UrbanPrint</p>
+                                                    <p id="productoDescripcion4"><strong>Descripción:</strong> Polo con estampado moderno y fresco, ideal para lucir un estilo único en la ciudad.</p>
+                                                    <p id="productoMaterial4"><strong>Material:</strong> Algodón y fibras recicladas.</p>
+                                                    <p id="productoPrecio4"><strong>Precio:</strong> $29.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Puedes agregar más elementos de carrusel aquí -->
                 </div>
                 <!-- Contenedor para las flechas fuera de las cartas -->
 
@@ -198,90 +437,330 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <!-- Producto 1 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im1.jpg" class="card-img-top igen" alt="Chaqueta larga">
                                     <div class="card-body">
                                         <h5 class="card-title">Chaqueta larga</h5>
-                                        <p class="card-text"> $130.99</p>
+                                        <p class="card-text">$130.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal9" onclick="cargarDetalles('Chaqueta larga', 'WinterWear', 'Chaqueta abrigadora ideal para climas fríos.', 'Poliéster y lana.', 130.99, 'img/im1.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal9" tabindex="-1" aria-labelledby="productoModalLabel1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel1">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im1.jpg" id="productoImagenSrc1" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre1">Chaqueta larga</h5>
+                                                    <p id="productoMarca1"><strong>Marca:</strong> WinterWear</p>
+                                                    <p id="productoDescripcion1"><strong>Descripción:</strong> Chaqueta abrigadora ideal para climas fríos, con bordes adecuados, colores llamativos y expriencia acogedora.</p>
+                                                    <p id="productoMaterial1"><strong>Material:</strong> Poliéster y lana.</p>
+                                                    <p id="productoPrecio1"><strong>Precio:</strong> $130.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 2 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im2.jpg" class="card-img-top igen" alt="Camiseta túnica">
                                     <div class="card-body">
                                         <h5 class="card-title">Camiseta túnica</h5>
                                         <p class="card-text">$90.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal10" onclick="cargarDetalles('Camiseta túnica', 'TrendyWear', 'Camiseta versátil de corte túnica.', 'Algodón premium.', 90.99, 'img/im2.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal10" tabindex="-1" aria-labelledby="productoModalLabel2" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel2">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im2.jpg" id="productoImagenSrc2" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre2">Camiseta túnica</h5>
+                                                    <p id="productoMarca2"><strong>Marca:</strong> TrendyWear</p>
+                                                    <p id="productoDescripcion2"><strong>Descripción:</strong> Camiseta versátil de corte túnica, colores con rayas horizontales en la parte inferior y mangas.</p>
+                                                    <p id="productoMaterial2"><strong>Material:</strong> Algodón premium.</p>
+                                                    <p id="productoPrecio2"><strong>Precio:</strong> $90.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 3 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im3.jpg" class="card-img-top igen" alt="Camisa franela">
                                     <div class="card-body">
                                         <h5 class="card-title">Camisa franela</h5>
                                         <p class="card-text">$82.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal11" onclick="cargarDetalles('Camisa franela', 'ClassicFit', 'Camisa cómoda ideal para el día a día.', 'Franela 100%.', 82.99, 'img/im3.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal11" tabindex="-1" aria-labelledby="productoModalLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel3">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im3.jpg" id="productoImagenSrc3" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre3">Camisa franela</h5>
+                                                    <p id="productoMarca3"><strong>Marca:</strong> ClassicFit</p>
+                                                    <p id="productoDescripcion3"><strong>Descripción:</strong> Camisa cómoda ideal para el día a día, con diseño a cuadros y colores pasteles que combinan para salidas.</p>
+                                                    <p id="productoMaterial3"><strong>Material:</strong> Franela 100%.</p>
+                                                    <p id="productoPrecio3"><strong>Precio:</strong> $82.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 4 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im4.jpg" class="card-img-top igen" alt="Vestido camiseta">
                                     <div class="card-body">
-                                        <h5 class="card-title">Vestido camiseta </h5>
+                                        <h5 class="card-title">Vestido camiseta</h5>
                                         <p class="card-text">$39.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal12" onclick="cargarDetalles('Vestido camiseta', 'UrbanWear', 'Vestido casual estilo camiseta.', 'Algodón suave.', 39.99, 'img/im4.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal fade" id="productoModal12" tabindex="-1" aria-labelledby="productoModalLabel4" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel4">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im4.jpg" id="productoImagenSrc4" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre4">Vestido camiseta</h5>
+                                                    <p id="productoMarca4"><strong>Marca:</strong> UrbanWear</p>
+                                                    <p id="productoDescripcion4"><strong>Descripción:</strong> Vestido casual estilo camiseta.</p>
+                                                    <p id="productoMaterial4"><strong>Material:</strong> Algodón suave.</p>
+                                                    <p id="productoPrecio4"><strong>Precio:</strong> $39.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <!-- Producto 13 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im5.jpg" class="card-img-top igen" alt="Abrigo impermeable">
                                     <div class="card-body">
                                         <h5 class="card-title">Abrigo impermeable</h5>
                                         <p class="card-text">$150.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal13" onclick="cargarDetalles('Abrigo impermeable', 'RainGear', 'Abrigo resistente al agua ideal para climas lluviosos.', 'Nylon de alta calidad.', 150.99, 'img/im5.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+                            <div class="modal fade" id="productoModal13" tabindex="-1" aria-labelledby="productoModalLabel13" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel13">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im5.jpg" id="productoImagenSrc13" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre13">Abrigo impermeable</h5>
+                                                    <p id="productoMarca13"><strong>Marca:</strong> RainGear</p>
+                                                    <p id="productoDescripcion13"><strong>Descripción:</strong> Abrigo resistente al agua ideal para climas lluviosos.</p>
+                                                    <p id="productoMaterial13"><strong>Material:</strong> Nylon de alta calidad.</p>
+                                                    <p id="productoPrecio13"><strong>Precio:</strong> $150.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 14 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
-                                    <img src="img/im6.jpg" class="card-img-top igen" alt="Vestido coctel">
+                                    <img src="img/im6.jpg" class="card-img-top igen" alt="Vestido cóctel">
                                     <div class="card-body">
                                         <h5 class="card-title">Vestido cóctel</h5>
                                         <p class="card-text">$110.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal14" onclick="cargarDetalles('Vestido cóctel', 'ElegantStyle', 'Vestido elegante perfecto para eventos especiales.', 'Seda y encaje.', 110.99, 'img/im6.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
-                                <div class="card">
-                                    <img src="img/im7.jpg" class="card-img-top igen" alt="Mini vestido">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mini vestido</h5>
-                                        <p class="card-text">$85.99</p>
-                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                            <div class="modal fade" id="productoModal14" tabindex="-1" aria-labelledby="productoModalLabel14" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel14">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im6.jpg" id="productoImagenSrc14" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre14">Vestido cóctel</h5>
+                                                    <p id="productoMarca14"><strong>Marca:</strong> ElegantStyle</p>
+                                                    <p id="productoDescripcion14"><strong>Descripción:</strong> Vestido elegante perfecto para eventos especiales.</p>
+                                                    <p id="productoMaterial14"><strong>Material:</strong> Seda y encaje.</p>
+                                                    <p id="productoPrecio14"><strong>Precio:</strong> $110.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-none d-md-block"> <!-- Oculta en pantallas pequeñas -->
+
+                            <!-- Producto 16 -->
+                            <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
                                     <img src="img/im8.jpg" class="card-img-top igen" alt="Vestido largo">
                                     <div class="card-body">
                                         <h5 class="card-title">Vestido largo</h5>
                                         <p class="card-text">$95.99</p>
                                         <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal16" onclick="cargarDetalles('Vestido largo', 'ChicWear', 'Vestido largo elegante para cualquier ocasión.', 'Poliéster.', 95.99, 'img/im8.jpg')">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal fade" id="productoModal16" tabindex="-1" aria-labelledby="productoModalLabel16" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel16">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im8.jpg" id="productoImagenSrc16" class="img-fluid" alt="Imagen del producto" >
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre16">Vestido largo</h5>
+                                                    <p id="productoMarca16"><strong>Marca:</strong> ChicWear</p>
+                                                    <p id="productoDescripcion16"><strong>Descripción:</strong> Vestido largo elegante para cualquier ocasión.</p>
+                                                    <p id="productoMaterial16"><strong>Material:</strong> Poliéster.</p>
+                                                    <p id="productoPrecio16"><strong>Precio:</strong> $95.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block">
+                                <div class="card">
+                                    <img src="img/im7.jpg" class="card-img-top igen" alt="Mini vestido">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mini vestido</h5>
+                                        <p class="card-text">$85.99</p>
+                                        <button class="btn btn-primary add-to-cart mt-2">Agregar al carrito</button>
+                                        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#productoModal15" onclick="cargarDetalles('Mini vestido', 'CasualFit', 'Mini vestido casual ideal para el día a día.', 'Algodón ligero.', 85.99, 'img/im7.jpg')">Ver detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productoModal15" tabindex="-1" aria-labelledby="productoModalLabel15" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productoModalLabel15">Detalles del Producto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <img src="img/im7.jpg" id="productoImagenSrc15" class="img-fluid" alt="Imagen del producto">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5 id="productoNombre15">Mini vestido</h5>
+                                                    <p id="productoMarca15"><strong>Marca:</strong> CasualFit</p>
+                                                    <p id="productoDescripcion15"><strong>Descripción:</strong> Mini vestido casual ideal para el día a día.</p>
+                                                    <p id="productoMaterial15"><strong>Material:</strong> Algodón ligero.</p>
+                                                    <p id="productoPrecio15"><strong>Precio:</strong> $85.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                     <!-- Puedes agregar más elementos de carrusel aquí -->
@@ -365,6 +844,20 @@
                 </div>
             </div>
         </footer>
+        <script>
+            function cargarDetalles(nombre, marca, descripcion, material, precio, imagen) {
+                // Actualiza el contenido del modal con los detalles del producto
+                document.getElementById("productoNombre").textContent = nombre;
+                document.getElementById("productoMarca").innerHTML = `<strong>Marca:</strong> ${marca}`;
+                document.getElementById("productoDescripcion").innerHTML = `<strong>Descripción:</strong> ${descripcion}`;
+                document.getElementById("productoMaterial").innerHTML = `<strong>Material:</strong> ${material}`;
+                document.getElementById("productoPrecio").innerHTML = `<strong>Precio:</strong> $${precio.toFixed(2)}`;
+                document.getElementById("productoImagenSrc").src = imagen;
+                document.getElementById("productoImagenSrc").alt = nombre;
+            }
+
+        </script>
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

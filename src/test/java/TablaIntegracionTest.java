@@ -113,7 +113,7 @@ public class TablaIntegracionTest {
             String insertPedidoSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago) VALUES (?, 100.00, ?)";
             try (PreparedStatement stmt = connection.prepareStatement(insertPedidoSQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
                 stmt.setInt(1, clienteId);
-                stmt.setString(2, "efectivo");
+                stmt.setString(2, "transferencia");
                 stmt.executeUpdate();
                 try (ResultSet rs = stmt.getGeneratedKeys()) {
                     assertTrue(rs.next());

@@ -23,6 +23,18 @@
             <version>8.0.30</version>
         </dependency>
         <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>9.0.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>ai.h2o</groupId>
+            <artifactId>h2o-jetty-9-ext</artifactId>
+            <version>3.42.0.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${jakartaee}</version>
@@ -89,7 +101,7 @@
             <artifactId>junit-platform-engine</artifactId>
             <version>1.11.3</version> 
             <scope>test</scope>
-        </dependency>
+        </dependency>    
         
     </dependencies>
     

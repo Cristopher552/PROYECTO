@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class PedidoDaoTest {
 
@@ -27,7 +27,7 @@ public class PedidoDaoTest {
     }
 
     private int crearCliente() throws SQLException {
-        String insertSQL = "INSERT INTO clientes (nombre, apellidos, email, telefono, distrito, direccion,dni) VALUES (?, ?, ?, ?, ?, ?,?)";
+        String insertSQL = "INSERT INTO clientes (nombre, apellidos, email, telefono, distrito, direccion, dni) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(insertSQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, "Juan");
             stmt.setString(2, "Perez");
@@ -55,8 +55,8 @@ public class PedidoDaoTest {
             
             double total = 150.00;
             String metodoPago = "tarjeta";
-            String estado = "Espera";
-            LocalDateTime fechaPedido = LocalDateTime.now(); 
+            String estado = "Pendiente";
+            LocalDate fechaPedido = LocalDate.now(); 
 
             String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement stmt = connection.prepareStatement(insertSQL)) {
@@ -78,7 +78,7 @@ public class PedidoDaoTest {
                         assertEquals(total, rs.getDouble("total"));
                         assertEquals(metodoPago, rs.getString("metodo_pago"));
                         assertEquals(estado, rs.getString("estado"));
-                        assertNotNull(rs.getTimestamp("fecha_pedido")); 
+                        assertNotNull(rs.getDate("fecha_pedido"));
                     }
                 }
             }
@@ -94,10 +94,10 @@ public class PedidoDaoTest {
             int clienteId = crearCliente();
             
             int pedidoId;
-            String estadoInicial = "Espera";
-            String estadoNuevo = "Aprobada";
+            String estadoInicial = "Pendiente";
+            String estadoNuevo = "Finalizado";
 
-            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', ?, CURRENT_TIMESTAMP)";
+            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', ?, CURRENT_DATE)";
             try (PreparedStatement stmt = connection.prepareStatement(insertSQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
                 stmt.setInt(1, clienteId);
                 stmt.setDouble(2, 100.00);
@@ -140,7 +140,7 @@ public class PedidoDaoTest {
 
             double totalEsperado = 200.00;
 
-            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', 'Espera', CURRENT_TIMESTAMP)";
+            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', 'Pendiente', CURRENT_DATE)";
             try (PreparedStatement stmt = connection.prepareStatement(insertSQL)) {
                 stmt.setInt(1, clienteId);
                 stmt.setDouble(2, totalEsperado);
@@ -165,12 +165,11 @@ public class PedidoDaoTest {
     @Test
     public void testEliminarPedido() throws Exception {
         try {
-           
             int clienteId = crearCliente();
 
             int pedidoId;
 
-            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', 'Espera', CURRENT_TIMESTAMP)";
+            String insertSQL = "INSERT INTO pedidos (cliente_id, total, metodo_pago, estado, fecha_pedido) VALUES (?, ?, 'tarjeta', 'Pendiente', CURRENT_DATE)";
             try (PreparedStatement stmt = connection.prepareStatement(insertSQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
                 stmt.setInt(1, clienteId);
                 stmt.setDouble(2, 50.00);
@@ -204,3 +203,4 @@ public class PedidoDaoTest {
         }
     }
 }
+

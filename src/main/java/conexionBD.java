@@ -8,12 +8,6 @@ import java.sql.SQLException;
  */
 public class conexionBD {
 
-    /**
-     * Obtiene una conexión a la base de datos.
-     *
-     * @return una instancia de {@link Connection} para interactuar con la base de datos.
-     * @throws SQLException si ocurre un error al obtener la conexión.
-     */
     public static Connection getConnection() throws SQLException {
         return conexionPool.getConnection();
     }

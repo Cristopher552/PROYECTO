@@ -1,3 +1,3 @@
 public interface usuarioDAO {
-    boolean validarCredenciales(String usuario, String contrasena);
+    boolean validarCredenciales(String usuario, String contraseña);
 }

@@ -4,14 +4,59 @@ document.addEventListener("DOMContentLoaded", function () {
     const formPago = document.getElementById("formPago");
     const totalPagarElemento = document.getElementById("totalPagar");
 
-    // Muestra u oculta el formulario de pago con tarjeta
+    // Elementos adicionales para métodos de pago
+    const inputsTarjeta = pagoTarjeta.querySelectorAll("input");
+    const metodoPayPal = document.createElement("div");
+    metodoPayPal.id = "pagoPayPal";
+    metodoPayPal.style.display = "none";
+    metodoPayPal.innerHTML = `
+        <div class="mb-3">
+            <label for="emailPayPal" class="form-label">Correo de PayPal</label>
+            <input type="email" class="form-control" id="emailPayPal" placeholder="Ingrese su correo de PayPal" required>
+        </div>`;
+    formPago.insertBefore(metodoPayPal, formPago.querySelector("hr.my-4:last-of-type"));
+
+    const metodoTransferencia = document.createElement("div");
+    metodoTransferencia.id = "pagoTransferencia";
+    metodoTransferencia.style.display = "none";
+    metodoTransferencia.innerHTML = `
+        <div class="mb-3">
+            <label for="numeroCuenta" class="form-label">Número de Cuenta</label>
+            <input type="text" class="form-control" id="numeroCuenta" placeholder="Ingrese el número de cuenta" required>
+        </div>
+        <div class="mb-3">
+            <label for="nombreBanco" class="form-label">Banco</label>
+            <input type="text" class="form-control" id="nombreBanco" placeholder="Ingrese el nombre del banco" required>
+        </div>`;
+    formPago.insertBefore(metodoTransferencia, formPago.querySelector("hr.my-4:last-of-type"));
+
+    // Función para manejar el cambio de método de pago
     metodoPagoSelect.addEventListener("change", function () {
-        if (metodoPagoSelect.value === "tarjeta") {
-            pagoTarjeta.style.display = "block";
-        } else {
-            pagoTarjeta.style.display = "none";
-        }
+        const metodo = metodoPagoSelect.value;
+        pagoTarjeta.style.display = metodo === "tarjeta" ? "block" : "none";
+        metodoPayPal.style.display = metodo === "paypal" ? "block" : "none";
+        metodoTransferencia.style.display = metodo === "transferencia" ? "block" : "none";
+
+        // Manejar los campos obligatorios según el método de pago
+        actualizarCamposRequeridos(metodo);
     });
+
+    // Función para actualizar los campos requeridos
+    function actualizarCamposRequeridos(metodo) {
+        // Limpia los campos requeridos de todos los métodos
+        inputsTarjeta.forEach(input => input.required = false);
+        metodoPayPal.querySelectorAll("input").forEach(input => input.required = false);
+        metodoTransferencia.querySelectorAll("input").forEach(input => input.required = false);
+
+        // Activa los requerimientos según el método de pago seleccionado
+        if (metodo === "tarjeta") {
+            inputsTarjeta.forEach(input => input.required = true);
+        } else if (metodo === "paypal") {
+            metodoPayPal.querySelectorAll("input").forEach(input => input.required = true);
+        } else if (metodo === "transferencia") {
+            metodoTransferencia.querySelectorAll("input").forEach(input => input.required = true);
+        }
+    }
 
     // Recuperar el total del carrito desde el localStorage
     const totalCarrito = localStorage.getItem("totalCarrito");
@@ -43,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function actualizarTotal() {
         total = 0;
 
-        // Sumar el total de los productos
         carrito.forEach(producto => {
             total += producto.precio * producto.cantidad;
         });
@@ -53,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Inicializa el formulario de tarjeta al cargar la página
-    mostrarFormularioTarjeta();
+    metodoPagoSelect.dispatchEvent(new Event("change"));
 
     // Lógica para manejar el envío del formulario
     formPago.addEventListener("submit", function (event) {

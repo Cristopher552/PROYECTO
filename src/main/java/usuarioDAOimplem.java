@@ -6,13 +6,13 @@ import java.sql.SQLException;
 public class usuarioDAOimplem implements usuarioDAO {
 
     @Override
-    public boolean validarCredenciales(String usuario, String contrasena) {
+    public boolean validarCredenciales(String usuario, String contraseña) {
         boolean esValido = false;
 
         try (Connection conn = conexionBD.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usuarios WHERE usuario = ? AND contrasena = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM administradores WHERE usuario = ? AND contraseña = ?")) {
             stmt.setString(1, usuario);
-            stmt.setString(2, contrasena);
+            stmt.setString(2, contraseña);
             ResultSet rs = stmt.executeQuery();
 
             esValido = rs.next();

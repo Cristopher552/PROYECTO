@@ -21,7 +21,7 @@
                 <a class="nav-link" href="productos.html">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Reportes</a>
+                <a class="nav-link" href="reportes.html">Reportes</a>
             </li>
         </ul>
     </div>
@@ -35,34 +35,44 @@
                     <th>Total</th>
                     <th>Método de Pago</th>
                     <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody id="pedidosTableBody">
-                <!-- Los datos de los pedidos se agregarán aquí mediante JavaScript -->
             </tbody>
         </table>
     </div>
     
     <script>
-        // Función para cargar los datos de los pedidos desde el servlet
         async function cargarPedidos() {
             try {
-                const response = await fetch('listarPedidos'); // URL del servlet que listará los pedidos
+                const response = await fetch('listarPedidos');
                 if (!response.ok) {
                     throw new Error('Error al cargar los pedidos');
                 }
                 const pedidos = await response.json();
                 const tableBody = document.getElementById('pedidosTableBody');
-                tableBody.innerHTML = ''; // Limpiar la tabla antes de agregar los nuevos datos
+                tableBody.innerHTML = '';
 
                 pedidos.forEach(pedido => {
                     const row = document.createElement('tr');
+                    row.setAttribute('id', `pedido-${pedido.pedido_id}`);
+                    if (pedido.estado === 'Finalizado') {
+                        row.classList.add('table-secondary');
+                    }
                     row.innerHTML = `
-                        <td>${pedido.id}</td>
-                        <td>${pedido.clienteId}</td>
+                        <td>${pedido.pedido_id}</td>
+                        <td>${pedido.cliente_id}</td>
                         <td>${pedido.total}</td>
                         <td>${pedido.metodoPago}</td>
                         <td>${pedido.fecha}</td>
+                        <td>${pedido.estado}</td>
+                        <td>
+                            ${pedido.estado === 'Pendiente' ? 
+                            `<button class="btn btn-success" onclick="aprobarPedido(${pedido.pedido_id})">Aprobar</button>` : 
+                            `<button class="btn btn-success" disabled>Aprobado</button>`}
+                        </td>
                     `;
                     tableBody.appendChild(row);
                 });
@@ -71,7 +81,30 @@
             }
         }
 
-        // Llamar a la función al cargar la página
+        async function aprobarPedido(pedidoId) {
+            try {
+                const response = await fetch(`actualizarEstadoPedido?pedidoId=${pedidoId}&estado=Finalizado`, {
+                    method: 'POST',
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error al actualizar el estado del pedido');
+                }
+
+                const row = document.getElementById(`pedido-${pedidoId}`);
+                const estadoCell = row.querySelector('td:nth-child(6)');
+                estadoCell.textContent = 'Finalizado';
+
+                row.classList.add('table-secondary');
+
+                const aprobarButton = row.querySelector('button');
+                aprobarButton.setAttribute('disabled', true);
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
         window.onload = cargarPedidos;
     </script>
 </body>
